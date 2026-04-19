@@ -22,7 +22,11 @@ jobs:
           repo init -u https://github.com/LineageOS/android.git -b lineage-23.2 --depth=1
 
       - name: Run Zultra Setup
-        run: bash zultra_setup.sh
+        run: |
+          # Grant execution permission to the script
+          chmod +x zultra_setup.sh
+          # Run the script using 'bash' to be safe
+          bash ./zultra_setup.sh
 
       - name: Start Compilation
         run: |
